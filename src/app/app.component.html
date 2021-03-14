@@ -1,12 +1,15 @@
-<!-- Welcome to {{title}}
-Hello {{user}}
-
-{{car1.id}}
-<ul>
-  <li *ngFor = "let car of cars">{{car.description}}</li>
-</ul> -->
-<app-navi></app-navi>
-<app-brand></app-brand>
-<app-car></app-car>
+<div class="container">
+  <app-navi></app-navi>
+  <div class="row">
+    <div class="col-md-3">
+      <app-brand></app-brand>
+      <app-color></app-color>
+    </div>
+    <div class="col-md-9">
+      <app-car></app-car>
+      <app-rental></app-rental>
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
