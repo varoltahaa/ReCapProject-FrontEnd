@@ -13,6 +13,7 @@ import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 export class CarComponent implements OnInit {
 
   cars:Car[] = [];
+  currentCar : Car;
   dataLoaded = false;
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
 
@@ -22,7 +23,7 @@ export class CarComponent implements OnInit {
         this.getCarsByBrand(params["brandId"])}
       else if(params["colorId"]){
         this.getCarsByColor(params["colorId"])
-      }  
+      }
       else{
         this.getCars();
       }
@@ -39,6 +40,14 @@ export class CarComponent implements OnInit {
 
   getCarsByColor(colorId:number){
     this.carService.getCarsByColor(colorId).subscribe(response => {this.cars = response.data, this.dataLoaded = true});
+  }
+
+  getCarByCarId(carId:number){
+    this.carService.getCarByCarId(carId).subscribe(response => {this.cars = response.data});
+  }
+
+  setCurrentCar(car:Car){
+    this.currentCar = car;
   }
 
 }
