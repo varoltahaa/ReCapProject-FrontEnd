@@ -1,14 +1,28 @@
 <div *ngIf="dataLoaded==false" class="spinner-grow text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
+<div>
 
+  <app-car-filter></app-car-filter>
+
+  
+  <!-- <div class="mb-3">
+    <label for="filterText" class="form-label">Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ara">
+  </div>
+
+  <div *ngIf="filterText" class="alert alert-info" >
+    Aradığınız ürün : {{filterText}}
+
+  </div> -->
+  
   <div style="margin-top:0.3cm; border-radius: 0.4cm;" class="card mb-2">
     <div style="background-color: #CFF4FC; border-top-left-radius: 0.4cm; border-top-right-radius: 0.4cm; " class="card-header text-center">
        <strong>Araç Listesi</strong>
     </div>
     <div class="card-body">
 
-<table *ngIf="dataLoaded==true" class="table table-striped table-hover">
+<table style="user-select: none;" *ngIf="dataLoaded==true" class="table table-striped table-hover">
 
     <thead>
         <tr>
@@ -21,12 +35,12 @@
         </tr>
     </thead>
     <tbody>   
-    <tr (click)="setCurrentCar(car)" routerLink="/cars/cardetail/{{car.id}}"  *ngFor = "let car of cars">
+    <tr (click)="setCurrentCar(car)" routerLink="/cars/cardetail/{{car.id}}"  *ngFor = "let car of cars | filterPipe:filterText">
         <td>{{car.id}}</td>
         <td>{{car.brandName}}</td>
         <td>{{car.colorName}}</td>
         <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
+        <td>{{car.dailyPrice |currency:"₺ "}}</td>
         <td>{{car.description}}</td>
     </tr>
   </tbody> 

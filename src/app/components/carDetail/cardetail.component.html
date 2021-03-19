@@ -1,9 +1,28 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Araç Detayları</h5>
-    <p class="card-text">Araç detayları ve resimler </p>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <img src="..." class="card-img-bottom" alt="...">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.arabateknikbilgi.com/wp-content/uploads/2019/10/Araba-Teknik-Bilgi-2019-Volkswagen-PassatVariant.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.arabafirsatlari.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2017/02/2017-VOLKSWAGEN-VARIANT-780x445.jpg.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i0.wp.com/www.otozellik.com/wp-content/uploads/Volkswagen-Passat-Variant-2020-Agustos-Fiyatlari.jpg?resize=1536%2C864&ssl=1" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 <table class="table table-striped table-hover">
     <thead>
@@ -14,6 +33,7 @@
           <th scope="col">Modeli</th>
           <th scope="col">Günlük Ücret</th>
           <th scope="col">Açıklama</th>
+          <th></th>
         </tr>
     </thead>
     <tbody>
@@ -22,8 +42,51 @@
         <td>{{cardetail.brandName}}</td>
         <td>{{cardetail.colorName}}</td>
         <td>{{cardetail.modelYear}}</td>
-        <td>{{cardetail.dailyPrice}}</td>
+        <td>{{cardetail.dailyPrice |currency:"₺ "}}</td>
         <td>{{cardetail.description}}</td>
+        <td>
+          <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Kirala
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{cardetail.brandName}} | Aracı Kirala</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid" >
+          <div class="row">
+            <div class="col-md-4" >
+              <label   for="inputCity" class="form-label"><b>Ücret</b></label><br>
+              <label style="margin-top: 0.52cm;"  for="inputCity" class="form-label"><b>Müşteri Adı</b></label>
+              <label style="margin-top: 0.52cm;"  for="inputCity" class="form-label"><b>Kiralama Tarihi</b></label>
+              <label style="margin-top: 0.52cm;"  for="inputCity" class="form-label"><b>Teslim Tarihi</b></label>
+            </div>
+            <div class="col-md-8" >
+              <input style="margin-bottom: 0.30cm;" class="form-control" type="text" placeholder={{cardetail.dailyPrice|currency}} aria-label="Disabled input example" disabled readonly>
+              <input style="margin-bottom: 0.30cm;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Müşteri Adı">
+              <input style="margin-bottom: 0.30cm;" type="date" class="form-control" id="exampleFormControlInput1" placeholder="rentDate">
+              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="returnDate">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+        <button routerLink="/cars/payment" type="button" class="btn btn-success">Kirala</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </td>
     </tr>
   </tbody>
 </table>

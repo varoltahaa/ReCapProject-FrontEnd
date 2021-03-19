@@ -1,4 +1,6 @@
-<ul class="list-group list-group-flush">
+<ul style="user-select: none;" class="list-group list-group-flush">
   <li style="margin-top:0.3cm; border-radius: 0.4cm;" class="list-group-item list-group-item-info"><b>Renkler</b></li>
     <li style=" border-radius: 0.4cm;margin-top:0.3cm; " (click)="setCurrentColor(color)" routerLink="/cars/color/{{color.id}}" *ngFor="let color of colors" [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
   </ul>
+
+  

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http'
 import { CarService } from 'src/app/services/car.service';
 import { ActivatedRoute } from '@angular/router';
 import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
+import { Brand } from 'src/app/models/brand';
 
 @Component({
   selector: 'app-car',
@@ -13,7 +14,9 @@ import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 export class CarComponent implements OnInit {
 
   cars:Car[] = [];
+  brands:Brand[] = [];
   currentCar : Car;
+  filterText=""
   dataLoaded = false;
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
 
