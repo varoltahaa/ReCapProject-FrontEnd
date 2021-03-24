@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarDetail } from 'src/app/models/cardetail';
 
 @Component({
   selector: 'app-payment',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  
 
   constructor() { }
 

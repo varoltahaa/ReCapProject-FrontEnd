@@ -1,7 +1,28 @@
-<ul style="user-select: none;" class="list-group list-group-flush">
-    <li style="margin-top:0.3cm; border-radius: 0.4cm;" class="list-group-item list-group-item-info"><b>Markalar</b></li>
-    <li style= "border-radius: 0.4cm; margin-top:0.1cm;" (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.id}}" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
-</ul>
+<ul style="user-select: none" class="list-group list-group-flush">
+  <li
+    style="margin-top: 0.3cm; border-radius: 0.4cm"
+    class="list-group-item list-group-item-info"
+  >
+    <b>Markalar</b>
+  </li>
 
+  <li
+    style="margin-top: 0.3cm; border-radius: 0.4cm"
+    class="list-group-item list-group-item-info"
+    routerLink="cars/brandupdate"
+  >
+    <b>Markayı Güncelle</b>
+  </li>
+
+  <li
+    style="border-radius: 0.4cm; margin-top: 0.1cm"
+    (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brand/{{ brand.id }}"
+    *ngFor="let brand of brands"
+    [class]="getCurrentBrandClass(brand)"
+  >
+    {{ brand.brandName }}
+  </li>
+</ul>
 
 <!-- <h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz</h5> -->

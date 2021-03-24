@@ -45,13 +45,10 @@
         <td>{{cardetail.dailyPrice |currency:"₺ "}}</td>
         <td>{{cardetail.description}}</td>
         <td>
-          <!-- Button trigger modal -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="button" routerLink="/cars/payment" (click)="createRental(cardetail)" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Kirala
 </button>
-
-<!-- Modal -->
+<!-- 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -63,16 +60,16 @@
         <div class="container-fluid" >
           <div class="row">
             <div class="col-md-4" >
-              <label   for="inputCity" class="form-label"><b>Ücret</b></label><br>
-              <label style="margin-top: 0.52cm;"  for="inputCity" class="form-label"><b>Müşteri Adı</b></label>
-              <label style="margin-top: 0.52cm;"  for="inputCity" class="form-label"><b>Kiralama Tarihi</b></label>
-              <label style="margin-top: 0.52cm;"  for="inputCity" class="form-label"><b>Teslim Tarihi</b></label>
+              <label   for="price" class="form-label"><b>Ücret</b></label><br>
+              <label style="margin-top: 0.52cm;"  for="customerName" class="form-label"><b>Müşteri Adı</b></label>
+              <label style="margin-top: 0.52cm;"  for="rentDate" class="form-label"><b>Kiralama Tarihi</b></label>
+              <label style="margin-top: 0.52cm;"  for="returnDate" class="form-label"><b>Teslim Tarihi</b></label>
             </div>
             <div class="col-md-8" >
-              <input style="margin-bottom: 0.30cm;" class="form-control" type="text" placeholder={{cardetail.dailyPrice|currency}} aria-label="Disabled input example" disabled readonly>
-              <input style="margin-bottom: 0.30cm;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Müşteri Adı">
-              <input style="margin-bottom: 0.30cm;" type="date" class="form-control" id="exampleFormControlInput1" placeholder="rentDate">
-              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="returnDate">
+              <input style="margin-bottom: 0.30cm;" id="price" class="form-control" type="text" placeholder={{cardetail.dailyPrice|currency}} aria-label="Disabled input example" disabled readonly>
+              <input style="margin-bottom: 0.30cm;" type="text" class="form-control" id="customerName" placeholder="Müşteri Adı">
+              <input style="margin-bottom: 0.30cm;" type="date" class="form-control" id="rentDate" placeholder="rentDate">
+              <input type="date" class="form-control" id="returnDate" placeholder="returnDate">
 
             </div>
 
@@ -85,7 +82,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
         </td>
     </tr>
   </tbody>
