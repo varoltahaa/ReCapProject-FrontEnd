@@ -1,35 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Rent A Car</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a routerLink="cars/caradd" class="dropdown-item">Araç Ekle</a></li>
-              <li><a routerLink="cars/brandadd" class="dropdown-item">Marka Ekle</a></li>
-              <li><a routerLink="cars/coloradd" class="dropdown-item">Renk Ekle</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+<header  style="background-color: #CFF4FC;" class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      </a> -->
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 text-secondary">Ana Sayfa</a></li>
+        <li><a href="#" class="nav-link px-2 text-secondary">Features</a></li>
+        <li><a href="#" class="nav-link px-2 text-secondary">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 text-secondary">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 text-secondary">Hakkında</a></li>
+        <div>
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle navbar" id="navbarDarkDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
+            Ekle
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a routerLink="cars/carAdd" class="dropdown-item" href="#">Araç Ekle</a></li>
+            <li><a routerLink="cars/brandAdd" class="dropdown-item" href="#">Marka Ekle</a></li>
+            <li><a routerLink="cars/colorAdd" class="dropdown-item" href="#">Renk Ekle</a></li>
+          </ul>
+        </li>
+      </div>
+      </ul>
+
+      <form class=" col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control form-control-dark" placeholder="Search...">
+      </form>
+
+      <div class="text-end">
+        <button routerLink="login" style="margin-right: 0.2cm;" type="button" class="btn btn-info">Giriş Yap</button>
+        <button routerLink="register" type="button" class="btn btn-warning">Kayıt Ol</button>
       </div>
     </div>
-  </nav>
+  </div>
+</header>

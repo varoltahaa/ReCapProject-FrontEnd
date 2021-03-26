@@ -1,76 +1,76 @@
 <div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div style="background-color: #cff4fc" class="card-header">
-          <h5 class="title-center">Araç Güncelle</h5>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="carUpdateForm">
-            <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="colorName"
-            ><b>Marka Seç</b></label>
+  <div class="col-md-12">
+    <div class="card">
+      <div style="background-color: #cff4fc" class="card-header">
+        <h5 class="title-center">Araç Ekle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="carUpdateForm">
+          <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="colorName"
+          ><b>Marka Seç</b></label>
+          <div class="mb-3">
+            <div>
+              <select class="form-control" formControlName="brandId">
+                <option *ngFor="let brand of brands" [ngValue]="brand.id" >{{brand.brandName}}</option>
+              </select>
+            </div>
+          </div>
+          <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="colorName"
+          ><b>Renk Seç</b></label>
+          <div class="mb-3 row">
+            <div>
+              <select class="form-control" formControlName="colorId">
+                <option *ngFor="let color of colors" [ngValue]="color.id">{{color.colorName}}</option>
+              </select>
+            </div>
+          </div>
             <div class="mb-3">
-              <div>
-                <select class="form-control" formControlName="brandId">
-                  <option *ngFor="let brand of brands" [ngValue]="brand.id" >{{brand.brandName}}</option>
-                </select>
+              <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="modelYear"
+                ><b>Modeli</b></label>
+  
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="modelYear"
+                  formControlName="modelYear"
+                  class="form-control"
+                  placeholder="Modeli"
+                />
               </div>
             </div>
-            <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="colorName"
-            ><b>Renk Seç</b></label>
-            <div class="mb-3 row">
-              <div>
-                <select class="form-control" formControlName="colorId">
-                  <option *ngFor="let color of colors" [ngValue]="color.id">{{color.colorName}}</option>
-                </select>
+            <div class="mb-3">
+              <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="dailyPrice"
+                ><b>Günlük Ücret</b></label>
+  
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="dailyPrice"
+                  formControlName="dailyPrice"
+                  class="form-control"
+                  placeholder="Günlük Ücret"
+                />
               </div>
             </div>
-              <div class="mb-3">
-                <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="modelYear"
-                  ><b>Modeli</b></label>
-    
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="modelYear"
-                    formControlName="modelYear"
-                    class="form-control"
-                    placeholder="Modeli"
-                  />
-                </div>
+            <div class="mb-3">
+              <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="description"
+                ><b>Açıklama</b></label>
+  
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="description"
+                  formControlName="description"
+                  class="form-control"
+                  placeholder="Açıklama"
+                />
               </div>
-              <div class="mb-3">
-                <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="dailyPrice"
-                  ><b>Günlük Ücret</b></label>
-    
-                <div class="form-group">
-                  <input
-                    type="number"
-                    id="dailyPrice"
-                    formControlName="dailyPrice"
-                    class="form-control"
-                    placeholder="Günlük Ücret"
-                  />
-                </div>
-              </div>
-              <div class="mb-3">
-                <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="description"
-                  ><b>Açıklama</b></label>
-    
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="description"
-                    formControlName="description"
-                    class="form-control"
-                    placeholder="Açıklama"
-                  />
-                </div>
-              </div>
-          </form>
-        </div>
-        <div class="card-footer d-grid gap-2">
-            <button class="btn btn-fill btn-primary" (click)="update()"><b>Güncelle</b></button>
-        </div>
+            </div>
+        </form>
+      </div>
+      <div class="card-footer d-grid gap-2">
+          <button class="btn btn-fill btn-primary"><b>Ekle</b></button>
       </div>
     </div>
   </div>
+</div>
