@@ -12,7 +12,7 @@
         <li><a href="#" class="nav-link px-2 text-secondary">Pricing</a></li>
         <li><a href="#" class="nav-link px-2 text-secondary">FAQs</a></li>
         <li><a href="#" class="nav-link px-2 text-secondary">Hakkında</a></li>
-        <div>
+        <div *ngIf="checkToEmail()==true">
         <li class="nav-item dropdown">
           <a  class="nav-link dropdown-toggle navbar" id="navbarDarkDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
             Ekle
@@ -22,7 +22,7 @@
             <li><a routerLink="cars/brandAdd" class="dropdown-item" href="#">Marka Ekle</a></li>
             <li><a routerLink="cars/colorAdd" class="dropdown-item" href="#">Renk Ekle</a></li>
           </ul>
-        </li>
+
       </div>
       </ul>
 
@@ -30,9 +30,20 @@
         <input type="search" class="form-control form-control-dark" placeholder="Search...">
       </form>
 
-      <div class="text-end">
-        <button routerLink="login" style="margin-right: 0.2cm;" type="button" class="btn btn-info">Giriş Yap</button>
-        <button routerLink="register" type="button" class="btn btn-warning">Kayıt Ol</button>
+      <div class="text-white">
+        <button *ngIf="checkToLogin()==false" routerLink="login" style="margin-right: 0.2cm;" type="button" class="btn btn-info">Giriş Yap</button>
+        <button *ngIf="checkToLogin()==false" routerLink="register" type="button" class="btn btn-warning">Kayıt Ol</button>
+        <div *ngIf="checkToEmail()==true"  >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar" id="navbarDarkDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
+              <b>{{user.firstName}} {{user.lastName}}</b>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a routerLink="profil" class="dropdown-item" href="#">Profil</a></li>
+              <li><a (click)="logOut()" class="dropdown-item" href="#">Çıkış Yap</a></li>
+            </ul>
+          </li>
+        </div>
       </div>
     </div>
   </div>

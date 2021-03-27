@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,FormBuilder,Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LocalStoreService } from 'src/app/services/local-store-service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
 
-  constructor(private formBuilder:FormBuilder,private toastrService:ToastrService,private authService:AuthService) { }
+  constructor(private formBuilder:FormBuilder,private toastrService:ToastrService,private authService:AuthService, private localStoreService:LocalStoreService) { }
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -31,7 +32,9 @@ export class LoginComponent implements OnInit {
       let loginModel = Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe(response => {
         this.toastrService.success(response.message,"Başarılı")
-        localStorage.setItem("token",response.data.token)
+        this.localStoreService.set("token",response.data.token);
+        this.localStoreService.set("email",this.loginForm.value.email);
+        setTimeout(() => { window.location.reload(); }, 1); 
       },responseError=>{
         this.toastrService.error(responseError.error,"Başarısız")
       })
