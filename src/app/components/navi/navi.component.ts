@@ -51,6 +51,7 @@ export class NaviComponent implements OnInit {
   }
   logOut(){
     this.localStoreService.clean();
+    this.toastrService.info("Çıkış Yapıldı","Başarılı")
   }
 
 }

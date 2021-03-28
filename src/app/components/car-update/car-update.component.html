@@ -2,10 +2,19 @@
   <div class="col-md-12">
     <div class="card">
       <div style="background-color: #cff4fc" class="card-header">
-        <h5 class="title-center">Araç Ekle</h5>
+        <h1 class="text-center"><b>Araç Güncelle</b></h1>
       </div>
       <div class="card-body">
         <form [formGroup]="carUpdateForm">
+          <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="colorName"
+          ><b>Güncellenecek Araç</b></label>
+          <div class="mb-3">
+            <div>
+              <select class="form-control" formControlName="id">
+                <option *ngFor="let car of carsDetail" [ngValue]="car.id" >{{car.brandName}}</option>
+              </select>
+            </div>
+          </div>
           <label style="margin-left: 0.2cm; margin-bottom: 0.20cm;" for="colorName"
           ><b>Marka Seç</b></label>
           <div class="mb-3">
@@ -69,7 +78,7 @@
         </form>
       </div>
       <div class="card-footer d-grid gap-2">
-          <button class="btn btn-fill btn-primary"><b>Ekle</b></button>
+          <button class="btn btn-fill btn-primary" (click)="update()"><b>Güncelle</b></button>
       </div>
     </div>
   </div>

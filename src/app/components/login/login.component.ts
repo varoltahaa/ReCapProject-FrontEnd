@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       let loginModel = Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe(response => {
+        setTimeout(() => { window.location.reload(); }, 1);
         this.toastrService.success(response.message,"Başarılı")
         this.localStoreService.set("token",response.data.token);
-        this.localStoreService.set("email",this.loginForm.value.email);
-        setTimeout(() => { window.location.reload(); }, 1); 
+        this.localStoreService.set("email",this.loginForm.value.email); 
       },responseError=>{
         this.toastrService.error(responseError.error,"Başarısız")
       })

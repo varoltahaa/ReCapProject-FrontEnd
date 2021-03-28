@@ -31,6 +31,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ProfilComponent } from './components/profil/profil.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ProfilComponent } from './components/profil/profil.component';
     LoginComponent,
     RegisterComponent,
     ProfilComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

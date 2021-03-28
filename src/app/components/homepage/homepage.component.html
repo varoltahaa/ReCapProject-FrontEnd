@@ -1,0 +1,31 @@
+<body style="background-color: white;">
+    
+    <main>
+      <div class="container py-4">
+ 
+    
+        <div  class="p-5 mb-4 rounded-3">
+          <div style="background-color: rgb(238, 233, 227); " class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Araç Listesi</h1>
+            <p class="col-md-8 fs-4">Kiralamak isteğiniz aracın tüm özelliklerini ve detaylarını listeleyebilirsiniz</p>
+            <button routerLink="cars/list/car" class="btn btn-primary btn-lg" type="button">Listele</button>
+          </div>
+        </div>
+    
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+              <h2>Marka Listesi</h2>
+              <p>Markalara önem mi veriyorsunuz ? Araçları hemen markalarına göre filtreleyip kendinize en uygun aracı kiralayabilirsiniz</p>
+              <button routerLink="cars/list/brand" class="btn btn-outline-light" type="button">Listele</button>
+            </div>
+          </div>
+          <div  class="col-md-6">
+            <div style="background-color: seashell;" class="h-100 p-5 border rounded-3">
+              <h2>Renk Listesi</h2>
+              <p>Marka veya başka bir şey benim için önemli değil bineceğim aracın rengi benim için önemli diyorsanız hemen filtreleyip kiralayabilirsiniz</p>
+              <button routerLink="cars/list/color" class="btn btn-outline-secondary" type="button">Listele</button>
+
+            </div>
+          </div>
+        </div>

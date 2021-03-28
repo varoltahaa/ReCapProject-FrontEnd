@@ -13,6 +13,11 @@ export class UserService {
 
   constructor(private httpClient:HttpClient) { }
 
+  getById(id:number){
+    let newPath = this.apiUrl + "users/getbyid?id=" + id
+    return this.httpClient.get<User>(newPath)
+  }
+
   getByMail(email:string):Observable<User>{
     let newPath = this.apiUrl + "users/getbymail?email="+email
     return this.httpClient.get<User>(newPath)

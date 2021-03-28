@@ -7,20 +7,41 @@
       </a> -->
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-secondary">Ana Sayfa</a></li>
-        <li><a href="#" class="nav-link px-2 text-secondary">Features</a></li>
-        <li><a href="#" class="nav-link px-2 text-secondary">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-secondary">FAQs</a></li>
+        <li><a routerLink="" class="nav-link px-2 text-secondary">Ana Sayfa</a></li>
         <li><a href="#" class="nav-link px-2 text-secondary">Hakkında</a></li>
         <div *ngIf="checkToEmail()==true">
         <li class="nav-item dropdown">
           <a  class="nav-link dropdown-toggle navbar" id="navbarDarkDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
-            Ekle
+            Araç İşlemleri
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a routerLink="cars/list/car" class="dropdown-item" href="#">Araçları Listele</a></li>
             <li><a routerLink="cars/carAdd" class="dropdown-item" href="#">Araç Ekle</a></li>
+            <li><a routerLink="cars/carupdate" class="dropdown-item" href="#">Araç Güncelle</a></li>
+          </ul>
+
+      </div>
+      <div *ngIf="checkToEmail()==true">
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle navbar" id="navbarDarkDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
+            Marka İşlemleri
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a routerLink="cars/list/brand" class="dropdown-item" href="#">Markaları Listele</a></li>
             <li><a routerLink="cars/brandAdd" class="dropdown-item" href="#">Marka Ekle</a></li>
+            <li><a routerLink="cars/brandupdate" class="dropdown-item" href="#">Marka Güncelle</a></li>
+          </ul>
+
+      </div>
+      <div *ngIf="checkToEmail()==true">
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle navbar" id="navbarDarkDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
+            Renk İşlemleri
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a routerLink="cars/list/color" class="dropdown-item" href="#">Renkleri Listele</a></li>
             <li><a routerLink="cars/colorAdd" class="dropdown-item" href="#">Renk Ekle</a></li>
+            <li><a routerLink="cars/colorupdate" class="dropdown-item" href="#">Renk Güncelle</a></li>
           </ul>
 
       </div>
